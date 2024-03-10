@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "c672761c-d1b8-49d5-8e8c-31259cf93b25",
+		"name": "clouddistrict",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33450022"
+	},
+	"item": [
+		{
+			"name": "[CLUB] - Create Club",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Club oficial\",\r\n    \"budget\": 20000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HOST}}/clubs"
+			},
+			"response": []
+		},
+		{
+			"name": "[CLUB] - Update budget for a club",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"budget\": 50000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HOST}}/clubs/1"
+			},
+			"response": []
+		},
+		{
+			"name": "[CLUB] Signup player in club",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Main player\",\r\n    \"surname\": \"For testing\",\r\n    \"email\": \"test@example.com\",\r\n    \"salary\": 2000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HOST}}/clubs/1/players"
+			},
+			"response": []
+		},
+		{
+			"name": "[CLUB] Remove player from club",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HOST}}/clubs/1/players/1"
+			},
+			"response": []
+		},
+		{
+			"name": "[CLUB] - Get all players by club id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/clubs/1/players?searchTerm=player&offset=1&limit=2",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"clubs",
+						"1",
+						"players"
+					],
+					"query": [
+						{
+							"key": "searchTerm",
+							"value": "player"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CLUB] Signup coach in club",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Coach\",\r\n    \"surname\": \"Para el primer club\",\r\n    \"email\": \"test@example.com\",\r\n    \"salary\": 500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HOST}}/clubs/1/coaches"
+			},
+			"response": []
+		},
+		{
+			"name": "[CLUB] Remove coach from club",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HOST}}/clubs/1/coaches/1"
+			},
+			"response": []
+		},
+		{
+			"name": "[Player] Create player",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test Player\",\r\n    \"surname\": \"without club\",\r\n    \"email\": \"email@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HOST}}/player/"
+			},
+			"response": []
+		},
+		{
+			"name": "[Coach] Create coach",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test Coach\",\r\n    \"surname\": \"Without club\",\r\n    \"email\": \"test6@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{HOST}}/coach/"
+			},
+			"response": []
+		}
+	]
+}
